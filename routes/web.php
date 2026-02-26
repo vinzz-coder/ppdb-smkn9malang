@@ -16,6 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin', function () {
     return view('admin.layout.app');
 });
+Route::get('/', function () {
+    return view('admin.page.beranda.index');
+})->name('beranda');
+
+Route::get('/user', function () {
+    return view('admin.page.user.index');
+})->name('user');
+Route::get('/jurusan', function () {
+    return view('admin.page.jurusan.index');
+})->name('jurusan');
+Route::get('/pendaftaran', function () {
+    return view('admin.page.pendaftaran.index');
+})->name('pendaftaran');
 
 Route::get('/guest', function () {
     return view('guest.layout.app');
