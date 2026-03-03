@@ -16,10 +16,13 @@
             <li class="{{ request()->routeIs('user') ? 'active' : '' }}">
               <a href="{{ route('user') }}" class="nav-link"><i class="fas fa-columns"></i> <span>User</span></a>
 
-            </li>
-            <li class="{{ request()->routeIs('jurusan') ? 'active' : '' }}"><a class="nav-link" href="{{ route('jurusan') }}"><i class="far fa-square"></i> <span>Jurusan</span></a></li>
+
+            <li class="{{ request()->routeIs('jurusan') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('jurusan') }}"><i class="far fa-square"></i> <span>Jurusan</span></a></li>
             <li class="{{ request()->routeIs('pendaftaran') ? 'active' : '' }}">
               <a href="{{ route('pendaftaran') }}" class="nav-link "><i class="fas fa-th"></i> <span>Pendaftaran</span></a>
+            <li class="{{ request()->routeIs('sekolah.*') ? 'active' : '' }}">
+              <a href="{{ route('sekolah.index') }}" class="nav-link "><i class="fas fa-th"></i> <span>Sekolah</span></a>
 
 
 
