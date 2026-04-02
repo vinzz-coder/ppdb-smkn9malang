@@ -12,7 +12,10 @@ class SekolahController extends Controller
      */
     public function index()
     {
-        return view('admin.page.sekolah.index');
+        $data = [
+            'sekolahs' => Sekolah::paginate(10)
+        ];
+        return view('admin.page.sekolah.index', $data);
     }
 
     /**
@@ -45,7 +48,10 @@ class SekolahController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [
+            'sekolah' => Sekolah::find($id)
+        ];
+        return view('admin.page.sekolah.edit', $data);
     }
 
     /**
@@ -53,7 +59,10 @@ class SekolahController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $sekolah = Sekolah::find($id);
+        $sekolah->update($request->all());
+        return to_route('sekolah.index');
     }
 
     /**
@@ -61,6 +70,8 @@ class SekolahController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $sekolah = Sekolah::find($id);
+        $sekolah->delete();
+        return to_route('sekolah.index');
     }
 }
